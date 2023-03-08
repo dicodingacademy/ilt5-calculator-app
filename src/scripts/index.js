@@ -20,8 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let result = calculate(operatorType, data);
 
     setResult(result);
-    setInputElementsToEmpty(firstInputEl);
-    setInputElementsToEmpty(secondInputEl);
   });
 
   function setResult(content) {
@@ -60,22 +58,3 @@ window.addEventListener('DOMContentLoaded', () => {
     return result;
   }
 });
-
-function isFormValidated(data) {
-  const values = Object.values(data);
-  const filteredValues = values.filter((item) => item === '');
-
-  return filteredValues.length === 0;
-}
-
-function convertStringToNumber(string) {
-  if (!(typeof string === 'string')) {
-    throw new Error('Parameter `string` bukan bertipe string');
-  }
-
-  return Number(string);
-}
-
-function setInputElementsToEmpty(element) {
-  element.value = '';
-}
