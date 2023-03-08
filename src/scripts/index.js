@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../styles/styles.css';
 
 import Calculator from './Calculator';
 
@@ -15,16 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
       firstNumber: firstInputEl.value,
       secondNumber: secondInputEl.value,
     };
-
-    if (!isFormValidated(data)) {
-      alert('Silakan isi data dengan benar!');
-      return;
-    }
-
-    const inputKeys = Object.keys(data);
-    inputKeys.forEach((item) => {
-      data[item] = convertStringToNumber(data[item]);
-    });
 
     const operatorType = event.submitter.textContent.toLowerCase();
     let result = calculate(operatorType, data);
@@ -45,13 +35,22 @@ window.addEventListener('DOMContentLoaded', () => {
         result = Calculator.addTwoNumber(data.firstNumber, data.secondNumber);
         break;
       case 'subtract':
-        result = Calculator.subtractTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.subtractTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       case 'multiply':
-        result = Calculator.multiplyTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.multiplyTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       case 'divide':
-        result = Calculator.divideTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.divideTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       default:
         alert('Operator tak diketahui');

@@ -4,38 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
 
-    <link rel="stylesheet" href="src/styles/styles.css">
+    <title>Calculator App</title>
   </head>
   <body>
     <main>
-      <h1>Calculator</h1>
-      <form>
-        <div>
-          <label for="input1">
-            Input 1:
-            <input type="number" id="input1" />
-          </label>
-        </div>
-        <div>
-          <label for="input2">
-            Input 2:
-            <input type="number" id="input2" />
-          </label>
-        </div>
-        <div class="form-group">
-          <button type="submit">Add</button>
-          <button type="submit">Subtract</button>
-          <button type="submit">Multiply</button>
-          <button type="submit">Divide</button>
-        </div>
-      </form>
+      <div class="container">
+        <div class="main-wrapper">
+          <h1>Calculator</h1>
+          <form>
+            <div class="form-group">
+              <label for="input1">
+                Input 1
+                <input type="number" id="input1" />
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="input2">
+                Input 2
+                <input type="number" id="input2" />
+              </label>
+            </div>
+            <div class="submit-btn-group">
+              <button type="submit">Add</button>
+              <button type="submit">Subtract</button>
+              <button type="submit">Multiply</button>
+              <button type="submit">Divide</button>
+            </div>
+          </form>
 
-      <hr />
-      <div>
-        <div>Hasil:</div>
-        <div id="result"></div>
+          <hr />
+
+          <div class="result-container">
+            <div>Hasil:</div>
+            <div id="result">Waiting for calculating...</div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
