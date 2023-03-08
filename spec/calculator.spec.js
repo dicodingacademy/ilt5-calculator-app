@@ -1,5 +1,12 @@
 import Calculator from '../src/scripts/Calculator';
 
+/**
+ * Test cases
+ * 1. Dapat melakukan penjumlahan, pengurangan, perkalian, dan pembagian dengan baik
+ * 2. Mengembalikan error ketika memasukkan nilai string
+ * 3. Mengembalikan error ketika memasukkan nilai NaN
+ */
+
 describe('Calculator', () => {
   const firstNumber = 2;
   const secondNumber = 5;

@@ -1,4 +1,4 @@
-import '../styles/styles.css'
+import '../styles/styles.css';
 
 import Calculator from './Calculator';
 
@@ -45,13 +45,22 @@ window.addEventListener('DOMContentLoaded', () => {
         result = Calculator.addTwoNumber(data.firstNumber, data.secondNumber);
         break;
       case 'subtract':
-        result = Calculator.subtractTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.subtractTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       case 'multiply':
-        result = Calculator.multiplyTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.multiplyTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       case 'divide':
-        result = Calculator.divideTwoNumber(data.firstNumber, data.secondNumber);
+        result = Calculator.divideTwoNumber(
+          data.firstNumber,
+          data.secondNumber,
+        );
         break;
       default:
         alert('Operator tak diketahui');
@@ -69,12 +78,12 @@ function isFormValidated(data) {
   return filteredValues.length === 0;
 }
 
-function convertStringToNumber(string) {
-  if (!(typeof string === 'string')) {
-    throw new Error('Parameter `string` bukan bertipe string');
+function convertStringToNumber(value) {
+  if (!(typeof value === 'string')) {
+    throw new Error('Parameter `value` bukan bertipe string');
   }
 
-  return Number(string);
+  return Number(value);
 }
 
 function setInputElementsToEmpty(element) {
