@@ -1,4 +1,4 @@
-import Calculator from '../src/scripts/Calculator';
+import Calculator from '../src/scripts/utils/Calculator';
 
 /**
  * Test cases
@@ -14,31 +14,26 @@ describe('Calculator', () => {
   const firstString = '2';
   const secondString = '5';
 
-  /*Adding*/
   it('should be able to add two number properly', () => {
     const result = Calculator.addTwoNumber(firstNumber, secondNumber);
     expect(result).toBe(7);
   });
 
-  /*Subtracting*/
   it('should be able to subtract two number properly', () => {
     const result = Calculator.subtractTwoNumber(firstNumber, secondNumber);
     expect(result).toBe(-3);
   });
 
-  /*Multiplying*/
   it('should be able to multiply two number properly', () => {
     const result = Calculator.multiplyTwoNumber(firstNumber, secondNumber);
     expect(result).toBe(10);
   });
 
-  /*Dividing*/
-  it('should be able to multiply two number properly', () => {
+  it('should be able to divide two number properly', () => {
     const result = Calculator.divideTwoNumber(firstNumber, secondNumber);
     expect(result).toBe(0.4);
   });
 
-  /*Others testing*/
   it('should fail and throw an error when passing two string as arguments', () => {
     expect(() => {
       Calculator.addTwoNumber(firstString, secondString);
@@ -81,7 +76,7 @@ describe('Calculator', () => {
     expect(divideResultType).toBe('number');
   });
 
-  it('should fail if pass not a number value', function () {
+  it('should fail if pass Not a Number (NaN) value', function () {
     const firstNumber = NaN;
     const secondNumber = NaN;
 

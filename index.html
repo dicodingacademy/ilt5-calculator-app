@@ -10,35 +10,31 @@
   <body>
     <main>
       <div class="container">
-        <div class="main-wrapper">
-          <h1>Calculator</h1>
-          <form>
-            <div class="form-group">
-              <label for="input1">
-                Input 1:
-                <input type="number" id="input1" />
-              </label>
-            </div>
-            <div class="form-group">
-              <label for="input2">
-                Input 2:
-                <input type="number" id="input2" />
-              </label>
-            </div>
-            <div class="submit-btn-group">
-              <button type="submit">Add</button>
-              <button type="submit">Subtract</button>
-              <button type="submit">Multiply</button>
-              <button type="submit">Divide</button>
-            </div>
-          </form>
+        <h1>Calculator</h1>
 
-          <hr />
-
-          <div class="result-container">
-            <div>Hasil:</div>
-            <div id="result">Waiting for calculating...</div>
+        <form>
+          <div class="form-control">
+            <label for="operand1">Operan 1 (Number only)</label>
+            <input type="text" id="operand1" class="form-field" />
           </div>
+          <div class="form-control">
+            <label for="operand2">Operan 2 (Number only)</label>
+            <input type="text" id="operand2" class="form-field" />
+          </div>
+
+          <div class="submit-btn-container">
+            <button class="btn">Add</button>
+            <button class="btn">Subtract</button>
+            <button class="btn">Multiply</button>
+            <button class="btn">Divide</button>
+          </div>
+        </form>
+
+        <hr />
+
+        <div class="result-container" tabindex="0">
+          <div tabindex="0">Hasil:</div>
+          <div id="result" tabindex="0">Waiting for calculating...</div>
         </div>
       </div>
     </main>

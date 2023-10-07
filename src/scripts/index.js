@@ -1,37 +1,42 @@
 import '../styles/styles.css';
 
-import Calculator from './Calculator';
+import Calculator from './utils/Calculator';
+import { convertStringToNumber, setInputElementsToEmpty } from './utils/utils';
 
 window.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-  const firstInputEl = document.querySelector('#input1');
-  const secondInputEl = document.querySelector('#input2');
+  const operand1El = document.querySelector('#operand1');
+  const operand2El = document.querySelector('#operand2');
   const resultEl = document.querySelector('#result');
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const data = {
-      firstNumber: firstInputEl.value,
-      secondNumber: secondInputEl.value,
+    const operands = {
+      firstNumber: operand1El.value,
+      secondNumber: operand2El.value,
     };
 
-    if (!isFormValidated(data)) {
-      alert('Silakan isi data dengan benar!');
-      return;
-    }
-
-    const inputKeys = Object.keys(data);
+    // Convert value input to number
+    const inputKeys = Object.keys(operands);
     inputKeys.forEach((item) => {
-      data[item] = convertStringToNumber(data[item]);
+      operands[item] = convertStringToNumber(operands[item]);
     });
 
     const operatorType = event.submitter.textContent.toLowerCase();
-    let result = calculate(operatorType, data);
 
-    setResult(result);
-    setInputElementsToEmpty(firstInputEl);
-    setInputElementsToEmpty(secondInputEl);
+    try {
+      let result = calculate(operatorType, operands);
+
+      // Display the result
+      setResult(result);
+
+      // Set input element to empty
+      setInputElementsToEmpty(operand1El);
+      setInputElementsToEmpty(operand2El);
+    } catch (error) {
+      alert(error.message);
+    }
   });
 
   function setResult(content) {
@@ -40,6 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function calculate(operator, data) {
     let result = 0;
+
     switch (operator) {
       case 'add':
         result = Calculator.addTwoNumber(data.firstNumber, data.secondNumber);
@@ -70,22 +76,3 @@ window.addEventListener('DOMContentLoaded', () => {
     return result;
   }
 });
-
-function isFormValidated(data) {
-  const values = Object.values(data);
-  const filteredValues = values.filter((item) => item === '');
-
-  return filteredValues.length === 0;
-}
-
-function convertStringToNumber(value) {
-  if (!(typeof value === 'string')) {
-    throw new Error('Parameter `value` bukan bertipe string');
-  }
-
-  return Number(value);
-}
-
-function setInputElementsToEmpty(element) {
-  element.value = '';
-}
