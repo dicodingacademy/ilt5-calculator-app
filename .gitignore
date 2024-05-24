@@ -1,5 +1,12 @@
+# IDE
+.vscode
+.idea
+
 # Dependency directories
-node_modules/
+node_modules
+
+# Package json
+package-lock.json
 
 # dotenv environment variable files
 .env
@@ -13,5 +20,3 @@ node_modules/
 
 # Custom directories
 dist
-.vscode
-.idea
