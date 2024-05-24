@@ -5,6 +5,7 @@ import Calculator from '../src/scripts/utils/Calculator';
  * 1. Dapat melakukan penjumlahan, pengurangan, perkalian, dan pembagian dengan baik
  * 2. Mengembalikan error ketika memasukkan nilai string
  * 3. Mengembalikan error ketika memasukkan nilai NaN
+ * 4. Mengembalikan error ketika memasukkan nilai Infinity
  */
 
 describe('Calculator', () => {
